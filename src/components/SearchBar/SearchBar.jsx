@@ -3,7 +3,7 @@ import { searchPokemon } from "../../api";
 
 const SearchBar = () => {
   const [search, setSearch] = useState("");
-  const [pokemon, setPokemon] = useState();
+  const [ setPokemon] = useState();
 
   const handleInputChange = (e) => {
     e.preventDefault();
@@ -14,7 +14,6 @@ const SearchBar = () => {
     const data = await searchPokemon(search);
     setPokemon(data);
   };
-  console.log(pokemon);
 
   return (
     <div>

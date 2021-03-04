@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Modal, ProgressBar } from "react-bootstrap";
+import { Modal, ProgressBar } from "react-bootstrap";
 import "./detalles.css";
 
 const Detalles = (props) => {

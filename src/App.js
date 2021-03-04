@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import NavBar from "./components/Navbar/NavBar";
 import Pokedex from "./components/Pokedex/Pokedex";
-import { getPokemons, getPokemonData, getLanguage } from "./api";
+import { getPokemons, getPokemonData } from "./api";
 function App() {
   const [pokemon, setPokemon] = useState([]);
   const [page, setPage] = useState(0);

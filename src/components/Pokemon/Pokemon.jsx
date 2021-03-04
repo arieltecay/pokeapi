@@ -5,7 +5,7 @@ import "./pokemon.css";
 const Pokemon = (props) => {
   const { pokemon } = props;
   const [showDetails, setShowDetails] = useState(false);
-  const [modalShow, setModalShow] = useState(true);
+  const [modalShow] = useState(true);
 
   const details = () => {
     setShowDetails(!showDetails);

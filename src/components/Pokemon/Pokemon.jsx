@@ -31,6 +31,7 @@ const Pokemon = (props) => {
               {
                 <Detalles
                   pokemon={pokemon}
+                  stats={pokemon.stats}
                   show={modalShow}
                   setModalShow={setModalShow}
                   showDetails={showDetails}

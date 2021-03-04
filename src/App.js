@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import NavBar from "./components/Navbar/NavBar";
 import Pokedex from "./components/Pokedex/Pokedex";
-import SearchBar from "./components/SearchBar/SearchBar";
-import { getPokemons, getPokemonData } from "./api";
+import { getPokemons, getPokemonData, getLanguage } from "./api";
 function App() {
   const [pokemon, setPokemon] = useState([]);
   const [page, setPage] = useState(0);
@@ -21,7 +20,9 @@ function App() {
       setPokemon(results);
       setLoading(false);
       setTotal(Math.ceil(data.count / 5));
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {

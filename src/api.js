@@ -27,3 +27,12 @@ export const getPokemonData = async (url) => {
     console.log(error);
   }
 };
+
+export const getLanguage = async () => {
+  try {
+    const res = await fetch("https://pokeapi.co/api/v2/language/{es}/");
+    console.log(res);
+  } catch (error) {
+    console.log(error);
+  }
+};

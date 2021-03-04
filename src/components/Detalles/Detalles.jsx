@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal } from "react-bootstrap";
+import { Card, Modal, ProgressBar } from "react-bootstrap";
 import "./detalles.css";
 
 const Detalles = (props) => {
@@ -8,7 +8,9 @@ const Detalles = (props) => {
   const closeDetails = () => {
     setShowDetails(!showDetails);
   };
-  console.log(pokemon.forms[0].name);
+
+  console.log(pokemon);
+
   return (
     show && (
       <div>
@@ -20,38 +22,56 @@ const Detalles = (props) => {
           <div className="title">
             <Modal.Header>{pokemon.name}</Modal.Header>
           </div>
-          <div>
+          <div className="images img-details">
             <img src={pokemon.sprites.back_default} alt="" />
             <img src={pokemon.sprites.back_shiny} alt="" />
             <img src={pokemon.sprites.front_shiny} alt="" />
             <img src={pokemon.sprites.front_default} alt="" />
           </div>
-
-          <div>Detalles</div>
-          <div>Peso:{pokemon.weight} kg</div>
           <div>
-            Habilidades
-            {/* <div>Tipo:{pokemon.abilities[0].ability.name}</div> */}
-            <div>
-              {pokemon.abilities.map((abiliti, id) => {
+            <h3>Stats</h3>
+            <div className="stats">
+              {pokemon.stats.map((stat, id) => {
                 return (
                   <div>
-                    <div key={id}>{abiliti.ability.name}</div>
+                    <div key={id}>
+                      <span>{stat.stat.name}</span>
+                      <ProgressBar
+                        now={stat.base_stat}
+                        max={255}
+                        label={stat.base_stat}
+                      />
+                    </div>
                   </div>
                 );
               })}
             </div>
           </div>
-
-          <div className="power">Poderes:</div>
-          <div className="pokemons">
-            {pokemon.types.map((type, id) => {
-              return (
-                <div>
-                  <div key={id}>{type.type.name}</div>
-                </div>
-              );
-            })}
+          <div className="details">
+            <h3>Abilities</h3>
+            <div>
+              {pokemon.abilities.map((abiliti, id) => {
+                return (
+                  <div>
+                    <div key={id}>
+                      <span>{abiliti.ability.name}</span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            <h3>Weight</h3>
+            {pokemon.weight} kg.
+            <h3>Type</h3>
+            <div>
+              {pokemon.types.map((type, id) => {
+                return (
+                  <div>
+                    <div key={id}>{type.type.name}</div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
           <div className="button-close">
             <button

@@ -1,0 +1,25 @@
+.button-close {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.power {
+  display: flex;
+  justify-content: center;
+  color: red;
+  font-size: 25px;
+}
+.pokemons {
+  display: flex;
+  justify-content: space-around;
+  color: blue;
+  text-transform: capitalize;
+  font-size: 20px;
+  
+}
+.title {
+  display: flex;
+  text-transform: uppercase;
+  justify-content: center;
+  font-size: 25px;
+}
